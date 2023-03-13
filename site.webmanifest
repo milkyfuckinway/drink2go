@@ -1,0 +1,15 @@
+{
+  "name": "Drink2Go",
+  "short_name": "D2G",
+  "start_url": "../index.html",
+  "description": "Интернет-магазин кофейных напитков Drink2Go.",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "icons": [
+    { "src": "img/favicons/192.png", "type": "image/png", "sizes": "192x192",
+    "purpose": "any maskable" },
+    { "src": "img/favicons/512.png", "type": "image/png", "sizes": "512x512",
+    "purpose": "any maskable" }
+  ]
+}
