@@ -1,0 +1,172 @@
+.slide {
+  &--first {
+    background: $flat-white;
+  }
+
+  &--second {
+    background: $lavender-latte;
+  }
+
+  &--third {
+    background: $espresso;
+  }
+
+  @media (min-width: $tablet) {
+    display: flex;
+    flex-direction: column-reverse;
+
+    &--first {
+      background: linear-gradient(180deg, $flat-white 0%, $flat-white 640px, $base-white 640px, $base-white 100%);
+    }
+
+    &--second {
+      background: linear-gradient(180deg, $lavender-latte 0%, $lavender-latte 640px, $base-white 640px, $base-white 100%);
+    }
+
+    &--third {
+      background: linear-gradient(180deg, $espresso 0%, $espresso 640px, $base-white 640px, $base-white 100%);
+    }
+  }
+
+  @media (min-width: $desktop) {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: end;
+
+    &--first {
+      background: $flat-white;
+    }
+
+    &--second {
+      background: $lavender-latte;
+    }
+
+    &--third {
+      background: $espresso;
+    }
+  }
+}
+
+.slide__image {
+  margin: 0 auto;
+  max-width: 280px;
+  padding: 20px 0 10px;
+
+  @media (min-width: $tablet) {
+    max-width: 476px;
+    padding: 0;
+  }
+
+  @media (min-width: $desktop) {
+    max-width: 600px;
+    transform: translate(-15px, -27px);
+  }
+}
+
+.slide__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 60px;
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    padding: 60px 80px 20px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 180px 80px 242px 14px;
+    z-index: 1;
+  }
+}
+
+.slide__badge {
+  @media (min-width: $tablet) {
+    margin: 0 0 4px 0;
+  }
+
+  @media (min-width: $desktop) {
+    align-self: flex-start;
+  }
+}
+
+.slide__title {
+  color: $base-black;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 48px;
+  margin: 0 0 10px 0;
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    font-size: 56px;
+    line-height: 80px;
+    margin: 0 0 16px 0;
+  }
+
+  @media (min-width: $desktop) {
+    text-align: left;
+  }
+}
+
+.slide__text {
+  color: $base-black;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 20px 0;
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 0 0 40px 0;
+    text-align: left;
+  }
+}
+
+.slide__break {
+  display: none;
+
+  @media (min-width: $tablet) {
+    display: inline;
+  }
+}
+
+.slide__order {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+
+  @media (min-width: $desktop) {
+    align-self: flex-start;
+    gap: 22px;
+  }
+}
+
+.slide__price-wrapper {
+  display: flex;
+  gap: 6px;
+}
+
+.slide__price-old {
+  @include price-old;
+}
+
+.slide__price {
+  @include price;
+}
+
+.slide__button {
+  @include button;
+  @include state-default;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px 20px;
+}

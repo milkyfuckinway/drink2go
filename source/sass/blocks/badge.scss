@@ -1,0 +1,17 @@
+.badge {
+  color: $base-primary;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 16px;
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+
+  &--big {
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    line-height: 20px;
+    margin: 0;
+    text-transform: unset;
+  }
+}

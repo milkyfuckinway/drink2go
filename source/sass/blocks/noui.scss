@@ -1,0 +1,93 @@
+.noUi-target {
+  background-color: $light-grey;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  height: 4px;
+  justify-content: center;
+  margin: 10px 0 36px;
+
+  @media (min-width: $tablet) {
+    margin: 11px 0 32px;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 12px 0 32px;
+  }
+}
+
+.noUi-base {
+  width: calc(100% - 24px);
+}
+
+.noUi-connect {
+  background-color: $base-primary;
+}
+
+.noUi-handle {
+  background-color: $base-white;
+  border: 2px solid $primary-lighter;
+  border-radius: 50%;
+  box-shadow: none;
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    background-color: transparent;
+    border-radius: 50%;
+    height: 16px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+    width: 16px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    outline: 0;
+
+    &::after {
+      background-color: $primary-opacity;
+    }
+  }
+
+  &:active {
+    &::after {
+      background-color: $base-primary;
+    }
+  }
+}
+
+.noUi-active {
+  &::after {
+    background-color: $base-primary;
+  }
+}
+
+[disabled].noUi-target .noUi-handle {
+  border-color: $base-grey;
+
+  &::after {
+    display: none;
+  }
+}
+
+[disabled].noUi-target .noUi-connect {
+  background-color: $base-grey;
+}
+
+.noUi-horizontal .noUi-handle {
+  height: 24px;
+  right: -12px;
+  top: -10px;
+  width: 24px;
+}
+
+.noUi-handle-lower {
+  top: 20px;
+}

@@ -1,0 +1,124 @@
+.nav {
+  background-color: $base-white;
+  position: fixed;
+  top: 60px;
+  transition: 0.2s ease-out;
+  width: 100%;
+  z-index: 1000;
+
+  @media (min-width: $tablet) {
+    grid-column: auto;
+    order: 1;
+    position: relative;
+    top: 0;
+    transform: translateY(0);
+    transition: 0s;
+    width: auto;
+  }
+}
+
+.nav--nojs {
+  grid-column: 1/3;
+  padding-top: 60px;
+  position: static;
+  top: 60px;
+  transform: translateY(0);
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    padding: 0;
+    top: 0;
+    width: auto;
+  }
+}
+
+.nav--closed {
+  transform: translateY(-100%);
+  visibility: hidden;
+
+  @media (min-width: $tablet) {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.nav--opened {
+  transform: translateY(0);
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 20px;
+  }
+}
+
+.nav__item {
+  align-items: stretch;
+  background-color: $base-white;
+  box-shadow: inset 0 -1px $base-secondary;
+  display: flex;
+  min-height: 57px;
+
+  &:first-child {
+    box-shadow: inset 0 1px $base-secondary, inset 0 -1px $base-secondary;
+  }
+
+  @media (min-width: $tablet) {
+    box-shadow: none;
+    min-height: 80px;
+
+    &:first-child {
+      box-shadow: none;
+    }
+  }
+}
+
+.nav__link {
+  align-items: center;
+  color: $base-black;
+  display: flex;
+  font-family: "montserrat", "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  line-height: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+
+  &:hover,
+  &:focus-visible {
+    color: $base-primary;
+    outline: 0;
+  }
+
+  &:active {
+    background-color: $base-secondary;
+    color: $base-primary;
+  }
+
+  @media (min-width: $tablet) {
+    padding: 0 20px;
+  }
+}
+
+.nav__link--current {
+  @media (min-width: $tablet) {
+    box-shadow: inset 0 -2px $base-primary;
+    color: $base-primary;
+    pointer-events: none;
+  }
+}

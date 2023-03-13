@@ -1,0 +1,272 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    gap: 40px;
+  }
+
+  @media (min-width: $desktop) {
+    max-width: 318px;
+  }
+}
+
+.filter__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 0 10px;
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    column-gap: 2.5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0;
+  }
+
+  @media (min-width: $desktop) {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+.filter__fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.filter__legend {
+  @include label;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 18px;
+  }
+}
+
+.filter__label {
+  align-items: center;
+  cursor: pointer;
+  display: grid;
+  gap: 10px;
+
+  &--radio {
+    grid-template-columns: 24px auto;
+  }
+
+  &--checkbox {
+    grid-template-columns: 42px auto;
+  }
+
+  & .filter__input:disabled + span {
+    color: $base-grey;
+  }
+}
+
+.filter__input {
+  cursor: pointer;
+  margin: 0;
+
+  &--radio,
+  &--checkbox {
+    appearance: none;
+    background-color: transparent;
+    display: grid;
+    margin: 0;
+    place-content: center;
+    transition: 0.2s ease-out;
+
+    &::before {
+      transition: 0.2s ease-out;
+    }
+  }
+
+  &--radio {
+    border: 2px solid $base-grey;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+
+    &::before {
+      background-color: $base-primary;
+      border-radius: 50%;
+      content: "";
+      height: 16px;
+      transform: scale(0);
+      width: 16px;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &:checked {
+      border-color: $base-primary;
+      outline: none;
+    }
+
+    &:hover::before,
+    &:focus-visible::before {
+      background-color: $primary-opacity;
+      transform: scale(1);
+    }
+
+    &:checked::before {
+      border-color: $base-primary;
+      transform: scale(1);
+    }
+
+    &:hover:checked::before,
+    &:focus-visible:checked::before {
+      background-color: $base-primary;
+    }
+
+    &:disabled {
+      border-color: $light-grey;
+    }
+
+    &:disabled::before {
+      background-color: $light-grey;
+    }
+
+    &:disabled:hover::before {
+      transform: scale(0);
+    }
+
+    &:disabled:checked:hover::before {
+      background-color: $light-grey;
+      transform: scale(1);
+    }
+  }
+
+  &--checkbox {
+    background-color: $base-grey;
+    border: 2px solid $base-grey;
+    border-radius: 12px;
+    height: 24px;
+    width: 42px;
+
+    &::before {
+      background-color: $base-white;
+      border-radius: 50%;
+      content: "";
+      height: 20px;
+      transform: translateX(-45%);
+      width: 20px;
+    }
+
+    &:checked {
+      background-color: $base-primary;
+      border-color: $base-primary;
+    }
+
+    &:checked::before {
+      transform: translateX(45%);
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: $primary-opacity;
+      border-color: $base-primary;
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: $light-grey;
+      border-color: $light-grey;
+    }
+
+    &:disabled:checked::before {
+      background-color: $base-grey;
+    }
+
+    &:hover:disabled {
+      background-color: $light-grey;
+      border-color: $light-grey;
+    }
+  }
+}
+
+.filter__buttons {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    padding-right: 53px;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 0;
+    justify-content: space-between;
+    padding: 0;
+  }
+}
+
+.filter__submit,
+.filter__reset {
+  @include button;
+  justify-content: center;
+  min-height: 45px;
+  min-width: 160px;
+  padding: 0;
+
+  @media (min-width: $tablet) {
+    min-height: 40px;
+  }
+}
+
+.filter__submit {
+  @include state-default;
+  font-size: 13px;
+
+  @media (min-width: $tablet) {
+    font-size: 14px;
+    min-width: 148px;
+  }
+
+  @media (min-width: $desktop) {
+    min-width: 150px;
+  }
+}
+
+.filter__reset {
+  @include state-alternate;
+
+  @media (min-width: $tablet) {
+    min-width: 138px;
+  }
+
+  @media (min-width: $desktop) {
+    min-width: 150px;
+  }
+}
+
+.filter__fieldset--radio,
+.filter__fieldset--checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__fieldset--radio {
+  gap: 22px;
+
+  @media (min-width: $tablet) {
+    gap: 20px;
+  }
+}
+
+.filter__fieldset--checkbox {
+  gap: 20px;
+  padding-left: 2px;
+
+  @media (min-width: $tablet) {
+    padding: 0;
+  }
+}

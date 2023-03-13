@@ -1,0 +1,148 @@
+.swiper {
+  display: flex;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.swiper-vertical > .swiper-wrapper {
+  flex-direction: column;
+}
+
+.swiper-wrapper {
+  box-sizing: content-box;
+  display: flex;
+  position: relative;
+  width: 100%;
+  z-index: -1;
+}
+
+.swiper-horizontal {
+  touch-action: pan-y;
+}
+
+.swiper-vertical {
+  touch-action: pan-x;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  width: 100%;
+}
+
+.swiper-image {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.swiper-button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  padding: 0;
+  position: absolute;
+  width: 20px;
+  z-index: 1;
+
+  @media (min-width: $tablet) {
+    height: calc(100% - 188px);
+  }
+
+  @media (min-width: $desktop) {
+    height: 100%;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    outline: 0;
+  }
+
+  &:active {
+    background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+  }
+
+  &:disabled {
+    .swiper-icon {
+      fill: $lightest-grey;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    width: 80px;
+  }
+}
+
+.swiper-button--next {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.swiper-icon {
+  align-items: center;
+  fill: $base-primary;
+  height: 20px;
+  width: 11px;
+}
+
+.swiper-pagination {
+  bottom: 60px;
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  z-index: 10;
+
+  @media (min-width: $desktop) {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    visibility: visible;
+  }
+}
+
+.swiper-pagination-bullet {
+  background-color: transparent;
+  cursor: pointer;
+  height: 24px;
+  position: relative;
+  width: 62px;
+
+  &::before {
+    background-color: $base-white;
+    content: "";
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 100;
+  }
+
+  &:hover,
+  &:focus-visible {
+    outline: 0;
+
+    &::before {
+      background-color: $primary-opacity;
+    }
+  }
+
+  &:active {
+    &::before {
+      background-color: $base-primary;
+    }
+  }
+}
+
+.swiper-pagination-bullet-active {
+  &::before {
+    background-color: $base-primary;
+  }
+}

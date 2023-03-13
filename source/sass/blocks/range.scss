@@ -1,0 +1,72 @@
+.range {
+  @media (min-width: $tablet) {
+    padding: 0 4px 0 7px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0;
+  }
+}
+
+.range__inputs {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+
+  &::after {
+    background-color: $base-grey;
+    content: "";
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 9px;
+  }
+}
+
+.range__input {
+  appearance: textfield;
+  border: 2px solid $primary-lighter;
+  border-radius: 4px;
+  font-family: "montserrat", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 38px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 118px;
+
+  @media (min-width: $tablet) {
+    height: 40px;
+    width: 42%;
+  }
+
+  &::placeholder {
+    color: $base-grey;
+  }
+
+  &:focus-visible::placeholder {
+    color: transparent;
+  }
+
+  &:focus-visible,
+  &:active,
+  &:hover {
+    border-color: $primary-darker;
+    outline: 0;
+  }
+
+  &:disabled {
+    border-color: $lightest-grey;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+}

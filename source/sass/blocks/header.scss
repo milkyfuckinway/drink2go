@@ -1,0 +1,32 @@
+.header {
+  color: $base-black;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  min-height: 60px;
+  position: relative;
+  top: 0;
+  width: 100%;
+
+  &::before {
+    background-color: $base-white;
+    content: "";
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 1001;
+  }
+
+  @media (min-width: $tablet) {
+    display: flex;
+    padding: 0 20px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0 40px;
+  }
+}

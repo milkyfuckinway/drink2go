@@ -1,0 +1,15 @@
+.body {
+  width: 100%;
+}
+
+.body__header,
+.body__promo,
+.body__advantages,
+.body__catalog-wrapper,
+.body__footer {
+  @media (min-width: $desktop) {
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+  }
+}

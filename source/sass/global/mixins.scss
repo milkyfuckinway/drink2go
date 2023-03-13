@@ -1,0 +1,113 @@
+@mixin heading-2 {
+  color: $base-black;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    font-size: 42px;
+    line-height: 64px;
+  }
+}
+
+@mixin heading-3 {
+  color: $base-black;
+  font-size: 18px;
+  line-height: 32px;
+
+  @media (min-width: $tablet) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+@mixin text($textalign) {
+  color: $base-black;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: ($textalign);
+
+  @media (min-width: $tablet) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@mixin price-old {
+  color: $base-primary;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-decoration: line-through;
+}
+
+@mixin price {
+  color: $base-black;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+@mixin label {
+  color: $base-black;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 0;
+}
+
+@mixin state-default {
+  background-color: $base-primary;
+  color: $base-white;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $primary-lighter;
+    color: $base-white;
+    outline: 0;
+  }
+
+  &:active {
+    background-color: $primary-darker;
+    color: $base-white;
+  }
+
+  &:disabled {
+    background-color: $base-grey;
+    color: $base-white;
+  }
+}
+
+@mixin state-alternate {
+  background-color: $base-white;
+  color: $base-primary;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $primary-lighter;
+    color: $base-white;
+    outline: 0;
+  }
+
+  &:active {
+    background-color: $primary-darker;
+  }
+
+  &:disabled {
+    background-color: $light-grey;
+  }
+}
+
+@mixin button {
+  align-items: center;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  font-family: "montserrat", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 8px 20px 8px 46px;
+}

@@ -1,0 +1,85 @@
+.user-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 0;
+  z-index: 1002;
+
+  @media (min-width: $tablet) {
+    order: 2;
+    position: static;
+  }
+}
+
+.user-menu__item {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: $desktop) {
+    &:not(:first-child):not(:last-child) {
+      margin-left: 20px;
+    }
+  }
+}
+
+.user-menu__icon {
+  display: block;
+}
+
+.user-menu__link {
+  align-items: center;
+  background-color: $base-white;
+  color: $base-black;
+  display: flex;
+  font-size: 12px;
+  gap: 8px;
+  height: 100%;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  line-height: 16px;
+  min-height: 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 60px;
+
+  &:focus-visible {
+    background-color: $base-secondary;
+    outline: 0;
+  }
+
+  &:active {
+    background-color: $base-secondary;
+    color: $base-black;
+  }
+
+  @media (min-width: $tablet) {
+    &:hover,
+    &:focus-visible {
+      color: $base-primary;
+      outline: none;
+    }
+
+    &:active {
+      color: $base-primary;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    height: 100%;
+    padding: 0 20px;
+    width: auto;
+  }
+}
+
+.user-menu__text {
+  display: none;
+
+  @media (min-width: $desktop) {
+    display: flex;
+  }
+}
